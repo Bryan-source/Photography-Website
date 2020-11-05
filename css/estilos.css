@@ -1,0 +1,254 @@
+/* General */
+
+@font-face {
+    font-family: 'DancingScript';
+    src: url(../fonts/DancingScript-Regular.otf);
+}
+
+body{
+    font-family: 'DancingScript';
+    background: black;
+}
+
+.contenido{
+    margin: 0 auto;
+    max-width: 900px;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.contenido header, .contenido main, .contenido footer{
+    width: 100%;
+}
+
+img{
+    box-shadow: 2px 2px 0 #02010a;
+}
+/* Sección header */
+header {
+    display: flex; 
+    flex-flow: row wrap;
+    padding: 5px 40px;
+    background-color: #5b7989;
+    border-radius: 10px 10px 0 0;
+    align-content: center;
+    animation: slidein 0.7s;
+    
+}
+
+header h1{
+    text-shadow: 0 0 2px  #02010a;
+    color: white;
+    margin-top: 3%;
+}
+
+nav{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 100%;
+    text-align: center;
+}
+
+nav a{
+    color: white;
+    margin-right: 20px;
+    
+    
+}
+
+a[href^='#'], a[href^='#']:visited {
+    text-decoration: none;
+}
+
+nav a:last-of-type{ 
+    margin-right: 0;
+}
+
+/* Sección imagen central */
+.imagenCentral {
+    background: #82c3a6;
+    padding: 5% 5%;
+    text-align: center;
+}
+
+.imagenCentral img{
+   
+    margin: 0 auto;
+    border: 2px;
+    width: 100%;
+}
+
+/* imagen segundaria */
+
+.imagensecundaria{
+    display: flex;
+    flex-flow: row wrap;
+    background: #d5c75f;
+
+}
+
+.imagensecundaria div{
+    text-align: center;
+    
+}
+
+.imagensecundaria div img{
+    width: 100%;
+    margin: 0 auto;
+    
+}
+
+.imagensecundaria a{
+    color: black;
+}
+
+/* ANIM Rotación de la imagen paisaje */
+#paisaje_index{
+    transition-property: transform, box-shadow;
+    transition-duration: 1s, 1s;
+}
+
+#paisaje_index:hover{
+    transform: rotateZ(10deg);
+    box-shadow: 2px 2px #82c3a6;
+}
+/* ANIM Traslación de la imagen retratos */
+#retrato_index{
+    transition-property: transform, box-shadow;
+    transition-duration: 1s, 1s;
+}
+
+#retrato_index:hover{
+    transform: translateY(-5px) translateX(20px);
+    box-shadow: 2px 2px #82c3a6;
+}
+
+
+
+/* PAISAJES */
+
+.galeria{
+    display: flex;
+    flex-flow: row wrap;
+    background: #d5c75f;
+}
+
+.galeria div{
+    width: 31%;
+}
+.galeria div img{
+    width: 100%;
+}
+/* FILTROS */
+.imagen1 img{
+	-webkit-filter: blur(10px); /* Chrome, Safari, Opera */
+	filter: blur(10px);
+}
+
+.imagen2, .imagen4, .imagen6 img{
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%)
+}
+
+.imagen3 img{
+    -webkit-filter: sepia(90%);
+    filter: sepia(90%)
+}
+
+/* Estilo Footer */
+footer{
+    display: flex;
+    flex-flow: row wrap;
+    border-radius: 0 0 10px 10px;
+    background-color: #C6d5c5;
+    padding: 3% 3%;
+
+}
+footer div{
+    margin-right: 5% ; 
+    width: 25%;
+}
+footer div:last-of-type{
+    margin: 0;
+}
+footer img{
+    box-shadow: none;
+    width: 20px;
+}
+
+footer ul{
+    list-style: none;
+}
+
+/* ANIMACION slidein */
+@-webkit-keyframes slidein {
+    0% {
+        margin-top: 150%;
+    }
+    60% {
+        margin-top: -5%;
+    }
+    100% {
+        margin-top: 0%;
+    }
+}
+
+/* ADAPTATIVO */
+
+/* Adaptativo para Desktop */
+@media all and (min-width: 900px) {
+    .contenido {
+        width: 900px;
+    }
+    header h1 {
+        width: 75%;
+    }
+    header nav {
+        width: 25%;
+    }
+    .imagensecundaria{
+        text-align: center;
+    }
+    .imagensecundaria div{
+        width: 50%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    .galeria div {
+        width: 33.3%;
+    }
+    footer div {
+        width: 21.2%;
+    }
+}
+
+/* Adaptativo para móvil */
+@media (max-width: 900px) {
+    .contenido {
+        width: 100%;
+    }
+    header {
+        text-align: center;
+    }
+    header h1 {
+        width: 100%;
+        margin: 3%;
+    }
+    header nav {
+        width: 100%;
+        margin:2%;
+    }
+    .imagensecundaria div {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .galeria div {
+        width: 100%;
+    }
+    footer div {
+        text-align: center;
+        width: 100%;
+    }
+}
